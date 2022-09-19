@@ -15,7 +15,7 @@ pipeline {
                 echo 'hello'
                 date
                 pwd
-                cal 2021
+                
                 '''
                 
             }
