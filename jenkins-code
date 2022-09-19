@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+       environment {
+        name = 'rahul'
+    }
+    stages {
+        stage('Run A commond') {
+            steps {
+            sh '''
+            ls
+            date
+            pwd
+            '''
+            
+        }
+    }
+        stage('Envirnment Veriable') {
+            environment {
+                username = 'myusername'
+            }
+            steps {
+                sh 'echo "$(BUILD_ID)"'
+                sh 'echo "$(name)"'
+                sh 'echo "$(username)"'
+            }
+        }
+        stage ('Deploy on Test') {
+            steps {
+            echo 'Deploy on Test'
+            sh 'echo "$(name)"'
+            }
+        }
+        stage('Deploy on prod') {
+            steps {
+            echo 'Deploy on prod'
+            }
+        }
+    }
+}
