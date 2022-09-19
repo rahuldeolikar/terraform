@@ -12,7 +12,7 @@ pipeline {
         stage('Run A command') {
             steps {
                 sh '''
-                ll
+                echo 'hello'
                 date
                 pwd
                 cal 2021
